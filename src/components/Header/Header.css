@@ -1,0 +1,44 @@
+.header {
+
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 70px;
+  max-width: 1280px;
+}
+
+.header_blue {
+  background-color: #073042;
+}
+
+.header_black {
+  background-color: #202020;
+}
+
+.header__container {
+  justify-content: space-between;
+}
+
+.header__logo {
+  display: inline-block;
+  margin: 18px 0;
+  width: 38px;
+  height: 38px;
+  background: url(../../images/logo.svg) no-repeat;
+}
+
+@media screen and (max-width: 768px) {
+  .header__container {
+    padding: 0 30px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header__container {
+    padding: 0 14px;
+  }
+}
+

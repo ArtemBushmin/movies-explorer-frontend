@@ -1,0 +1,136 @@
+.technologies {
+  background-color: #272727;
+  color: #FFFFFF;
+}
+
+.technologies__container {
+  margin: 0 auto;
+  padding: 100px 70px;
+  max-width: 1280px;
+}
+
+.technologies__header {
+  margin: 0 0 23px 0;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 27px;
+  letter-spacing: -0.04em;
+}
+
+.technologies__text-container {
+  border-top: 1px solid #DADADA;
+}
+
+.technologies__text-header {
+  margin: 0;
+  padding: 90px 0 26px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 58px;
+  letter-spacing: -0.04em;
+  text-align: center;
+}
+
+.technologies__text {
+  margin: 0 auto 100px;
+  max-width: 460px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.04em;
+  text-align: center;
+}
+
+.technologies__list-container {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  gap: 10px;
+  justify-content: center;
+}
+
+.technologies__technology {
+  border-radius: 10px;
+  width: 90px;
+  height: 60px;
+  background: #303030;
+}
+
+.technologies__technology-name {
+  margin: 0;
+  padding: 21px 0 22px 0;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  letter-spacing: -0.04em;
+}
+
+@media screen and (max-width: 768px) {
+  .technologies__container {
+    padding: 90px 50px;
+  }
+
+  .technologies__text-header {
+    padding: 80px 0 22px;
+  }
+
+  .technologies__text {
+    margin: 0 auto 83px;
+    max-width: 460px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .technologies__technology {
+    width: 84px;
+    height: 57px;
+  }
+
+  .technologies__technology-name {
+    padding: 21px 0 21px 0;
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .technologies__container {
+    padding: 70px 18px;
+  }
+
+  .technologies__header {
+    margin: 0 0 28px 0;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .technologies__text-container {
+    border-top: 1px solid #000000;
+  }
+
+  .technologies__text-header {
+    padding: 60px 0 24px;
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  .technologies__text {
+    margin: 0 auto 50px;
+    max-width: 292px;
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .technologies__list-container {
+    flex-wrap: wrap;
+    justify-content: start;
+    width: 178px;
+    margin: 0 auto;
+  }
+}

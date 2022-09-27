@@ -1,0 +1,39 @@
+.filter-checkbox {
+
+}
+
+.filter-checkbox__container {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.filter-checkbox__title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #FFFFFF;
+}
+
+.filter-checkbox__button {
+  width: 36px;
+  height: 20px;
+  background-image: url(../../../../images/checkbox.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 20px;
+  border: none;
+}
+
+@media screen and (max-width: 320px) {
+  .filter-checkbox__container {
+    gap: 13px;
+  }
+
+  .filter-checkbox__title {
+    font-size: 11px;
+    line-height: 18px;
+  }
+}
