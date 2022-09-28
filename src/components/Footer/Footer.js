@@ -14,6 +14,7 @@ function Footer() {
               <a
                 href='https://practicum.yandex.ru/'
                 className='footer__link'
+                target='_blank'
               >
                 Яндекс.Практикум
               </a>
@@ -22,6 +23,7 @@ function Footer() {
               <a
                 href='https://github.com/ArtemBushmin'
                 className='footer__link'
+                target='_blank'
               >
                 Github
               </a>

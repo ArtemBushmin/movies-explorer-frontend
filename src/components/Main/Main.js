@@ -10,20 +10,22 @@ import Footer from '../Footer/Footer';
 
 function Main() {
     return (
-      <main className='landing'>
-        <Header
-          color={'header_blue'}
-          location={'header__container'}
-        >
-          <HeaderLanding />
-        </Header>
-        <Promo />
-        <AboutProject />
-        <Techs />
-        <AboutMe />
-        <Portfolio />
-        <Footer />
-      </main>
+    <>
+      <Header
+        color={'header_blue'}
+        location={'header__container'}
+      >
+        <HeaderLanding />
+      </Header>
+        <main className='landing'>
+          <Promo />
+          <AboutProject />
+          <Techs />
+          <AboutMe />
+          <Portfolio />
+        </main>
+      <Footer />
+    </>
     );
   }
 

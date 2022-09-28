@@ -22,6 +22,7 @@ function AboutMe() {
             <a
               className='profile__link'
               href='https://github.com/ArtemBushmin'
+              target='_blank'
             >
               Github
             </a>

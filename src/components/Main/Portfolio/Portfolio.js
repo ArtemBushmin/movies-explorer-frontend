@@ -10,36 +10,42 @@ function Portfolio() {
             <a
               className='portfolio__github'
               href='https://github.com/ArtemBushmin/how-to-learn'
+              target='_blank'
             >
               Статичный сайт
             </a>
             <a
               className='portfolio__cursor'
               href='https://github.com/ArtemBushmin/how-to-learn'
+              target='_blank'
             />
           </li>
           <li className='portfolio__links'>
             <a
               className='portfolio__github'
               href='https://github.com/ArtemBushmin/russian-travel'
+              target='_blank'
             >
               Адаптивный сайт
             </a>
             <a
               className='portfolio__cursor'
               href='https://github.com/ArtemBushmin/russian-travel'
+              target='_blank'
             />
           </li>
           <li className='portfolio__links'>
             <a
               className='portfolio__github'
               href='https://github.com/ArtemBushmin/mesto'
+              target='_blank'
             >
               Одностраничное приложение
             </a>
             <a
               className='portfolio__cursor'
               href='https://github.com/ArtemBushmin/mesto'
+              target='_blank'
             />
           </li>
         </ul>

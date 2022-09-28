@@ -31,7 +31,7 @@
   background-size: contain;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1279px) {
   .promo {
     min-height: 844px;
   }
@@ -51,7 +51,7 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .promo {
     min-height: 630px;
   }

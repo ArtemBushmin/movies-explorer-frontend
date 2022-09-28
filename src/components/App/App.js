@@ -10,16 +10,18 @@ import PageNotFound from '../PageNotFound/PageNotFound';
 
 function App() {
   return (
-    <div className="page">
-      <Routes>
-        <Route path='/' element={<Main />} />
-        <Route path='/movies' element={<Movies />} />
-        <Route path='/saved-movies' element={<SavedMovies />} />
-        <Route path='/profile' element={<Profile />} />
-        <Route path='/signup' element={<Register />} />
-        <Route path='/signin' element={<Login />} />
-        <Route path='*' element={<PageNotFound />} />
-      </Routes>
+    <div className="root">
+      <div className="page">
+        <Routes>
+          <Route path='/' element={<Main />} />
+          <Route path='/movies' element={<Movies />} />
+          <Route path='/saved-movies' element={<SavedMovies />} />
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/signup' element={<Register />} />
+          <Route path='/signin' element={<Login />} />
+          <Route path='*' element={<PageNotFound />} />
+        </Routes>
+      </div>
     </div>
   );
 }

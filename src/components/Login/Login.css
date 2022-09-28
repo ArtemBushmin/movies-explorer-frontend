@@ -101,13 +101,13 @@
   text-decoration: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1279px) {
   .login {
     padding: 232px 186px 232px;
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .login {
     padding: 56px 30px 30px;
   }
@@ -118,6 +118,7 @@
 
   .login__header {
     margin: 0 0 80px;
+    text-align: center;
   }
 
   .login__submit-button {

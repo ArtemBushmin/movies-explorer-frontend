@@ -1,13 +1,15 @@
 import './MoviesCardList.css';
 import MoviesCard from '../MoviesCard/MoviesCard';
+import MoviesCardDemo from '../MoviesCardDemo/MoviesCardDemo';
+import MoviesCardDemo1 from '../MoviesCardDemo1/MoviesCardDemo1';
 
 function MoviesCardList() {
   return (
     <section className='movies-list'>
       <ul className='movies-list__container'>
         <MoviesCard/>
-        <MoviesCard/>
-        <MoviesCard/>
+        <MoviesCardDemo/>
+        <MoviesCardDemo1/>
         <MoviesCard/>
         <MoviesCard/>
         <MoviesCard/>
