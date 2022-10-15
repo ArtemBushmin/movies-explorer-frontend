@@ -101,6 +101,29 @@
   text-decoration: none;
 }
 
+.login__error {
+  display: block;
+  margin: -10px 0 24px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #EE3465;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+}
+
+.login__error:nth-last-child(2) {
+  margin-bottom: -190px;
+  margin-top: 177px;
+}
+
+.login__error_visible {
+  opacity: 1;
+  visibility: visible;
+}
+
 @media screen and (max-width: 1279px) {
   .login {
     padding: 232px 186px 232px;

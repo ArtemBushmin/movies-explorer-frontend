@@ -4,9 +4,17 @@ import HeaderMovies from '../Header/HeaderMovies/HeaderMovies';
 import SearchForm from './SearchForm/SearchForm';
 import MoviesCardList from './MoviesCardList/MoviesCardList';
 import Footer from '../Footer/Footer';
-import BurgerMenu from '../Header/BurgerMenu/BurgerMenu';
+import Preloader from '../Movies/Preloader/Preloader/Preloader';
 
-function Movies() {
+function Movies({
+  onSubmit,
+  movies,
+  saveMovies,
+  isError,
+  isNotFound,
+  preloader,
+  handleSaveMovie,
+}) {
   return (
     <main className='movies'>
       <Header
@@ -15,10 +23,24 @@ function Movies() {
       >
         <HeaderMovies />
       </Header>
-      <SearchForm />
-      <MoviesCardList/>
+      <SearchForm
+        onSubmit={onSubmit}
+        isError={isError}
+        isNotFound={isNotFound}
+      />
+      {preloader ?
+      (<Preloader/>)
+      :
+      (<MoviesCardList
+        movies={movies}
+        saveMovies={saveMovies}
+        isError={isError}
+        isNotFound={isNotFound}
+        handleSaveMovie={handleSaveMovie}
+      />)
+      }
+
       <Footer />
-      <BurgerMenu />
     </main>
   );
 }
