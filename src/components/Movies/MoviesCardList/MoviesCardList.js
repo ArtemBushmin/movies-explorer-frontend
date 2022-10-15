@@ -81,6 +81,7 @@ function MoviesCardList({
                   handleSaveMovie={handleSaveMovie}
                   movie={movie}
                   saveMovies={saveMovies}
+                  handleDeleteMovie={handleDeleteMovie}
                 />
               );
             })}

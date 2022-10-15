@@ -14,6 +14,7 @@ function Movies({
   isNotFound,
   preloader,
   handleSaveMovie,
+  handleDeleteMovie,
 }) {
   return (
     <main className='movies'>
@@ -37,6 +38,7 @@ function Movies({
         isError={isError}
         isNotFound={isNotFound}
         handleSaveMovie={handleSaveMovie}
+        handleDeleteMovie={handleDeleteMovie}
       />)
       }
 

@@ -216,9 +216,16 @@ function App() {
   };
 
   const handleDeleteMovie = (movie) => {
-    const savedMovie = saveMovies.find(
-      (item) => item.movieId === movie.movieId
-    );
+    let savedMovie;
+    if (movie.movieId) {
+     savedMovie = saveMovies.find(
+        (item) => item.movieId === movie.movieId
+      );
+    } else {
+      savedMovie = saveMovies.find(
+        (item) => item.movieId === movie.id
+      );
+    }
 
     mainApi
       .deleteMovie(savedMovie._id)
@@ -252,6 +259,7 @@ function App() {
                     isNotFound={isNotFound}
                     preloader={preloader}
                     handleSaveMovie={handleSaveMovie}
+                    handleDeleteMovie={handleDeleteMovie}
                   ></Movies>
                 </ProtectedRoute>
               }

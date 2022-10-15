@@ -18,7 +18,12 @@ function MoviesCard({
   let minutes = Math.floor(duration - hours * 60);
 
   const handleButtonClick = () => {
-    handleSaveMovie(movie);
+    console.log(iconState);
+    if (iconState) {
+      handleDeleteMovie(movie);
+    } else {
+      handleSaveMovie(movie);
+    }
     setIconState(!iconState);
   };
 
