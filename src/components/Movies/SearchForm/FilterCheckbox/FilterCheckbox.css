@@ -25,10 +25,18 @@
   background-position: center;
   border-radius: 20px;
   border: none;
+  cursor: pointer;
 }
 
-.filter-checkbox__button:active {
+.filter-checkbox__button_active {
+  width: 36px;
+  height: 20px;
   background-image: url(../../../../images/checkboxoff.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 320px) {
