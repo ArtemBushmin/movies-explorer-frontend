@@ -12,7 +12,13 @@ function Profile({ updateUser, onSignOut, isMessageProfile }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { name, email } = controlError.values;
+    let { name, email } = controlError.values;
+    if (controlError.values.name === undefined) {
+      name = currentUser.name;
+    }
+    if (controlError.values.email === undefined) {
+      email = currentUser.email;
+    }
     updateUser(name, email);
     controlError.resetForm();
   };
@@ -37,10 +43,10 @@ function Profile({ updateUser, onSignOut, isMessageProfile }) {
                 className="profile-page__input"
                 name="name"
                 required="{true}"
-                placeholder={currentUser.name}
+                placeholder=''
                 pattern="[A-Za-zА-Яа-яЁё\s-]+"
                 onChange={controlError.handleChange}
-                value={controlError?.values?.name ?? ""}
+                value={controlError?.values?.name ?? currentUser.name}
               />
             </label>
             <span
@@ -58,11 +64,11 @@ function Profile({ updateUser, onSignOut, isMessageProfile }) {
                 type="email"
                 className="profile-page__input"
                 name="email"
-                placeholder={currentUser.email}
+                placeholder=''
                 required="{true}"
                 pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
                 onChange={controlError.handleChange}
-                value={controlError?.values?.email || ""}
+                value={controlError?.values?.email ?? currentUser.email}
               />
             </label>
             <span

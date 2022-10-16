@@ -1,6 +1,6 @@
 import "./MoviesCard.css";
 import { useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function MoviesCard({
   name,
@@ -18,18 +18,21 @@ function MoviesCard({
   let minutes = Math.floor(duration - hours * 60);
 
   const handleButtonClick = () => {
-    console.log(iconState);
     if (iconState) {
       handleDeleteMovie(movie);
+      setIconState(!iconState);
     } else {
       handleSaveMovie(movie);
+      if (!localStorage.saveError){
+        setIconState(!iconState);
+      }
     }
-    setIconState(!iconState);
   };
 
   const handleButtonDelete = () => {
     handleDeleteMovie(movie);
   };
+
 
   return (
     <li className="movie-card__card">

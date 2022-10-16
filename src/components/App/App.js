@@ -32,6 +32,10 @@ function App() {
   const [isMessageProfile, setIsMessageProfile] = useState(false);
   const [saveMovies, setSaveMovies] = useState([]);
 
+  if (localStorage.saveError === undefined) {
+    localStorage.saveError = false;
+  }
+
   useEffect(() => {
     tokenCheck();
   }, []);
@@ -44,6 +48,8 @@ function App() {
           setSaveMovies(res);
         })
         .catch((err) => {
+          setIsErrorSave(true);
+          setSaveMovies([]);
           console.log(err);
         });
     }
@@ -155,28 +161,36 @@ function App() {
   };
 
   const handleSearchMovies = (name) => {
-    moviesApi
+    if (localStorage.allMovies === undefined) {
+      moviesApi
       .getAllMovies()
       .then((movies) => {
-        localStorage.setItem("allMovies", JSON.stringify(movies));
+          localStorage.setItem("allMovies", JSON.stringify(movies));
       })
       .then(() => {
-        setPreloader(true);
-        const searchRes = searchMovies(
-          JSON.parse(localStorage.getItem("allMovies")),
-          name
-        );
-        setIsError(false);
-        setMoviesRes(searchRes);
-        setIsNotFound(!searchRes.length);
-        setTimeout(() => setPreloader(false), 1000);
+        findMovies(name);
       })
       .catch((err) => {
         setIsError(true);
         setMoviesRes([]);
         console.log(err);
       });
+    } else {
+      findMovies(name);
+    }
   };
+
+  const findMovies = (name) => {
+    setPreloader(true);
+    const searchRes = searchMovies(
+      JSON.parse(localStorage.getItem("allMovies")),
+      name
+    );
+    setIsError(false);
+    setMoviesRes(searchRes);
+    setIsNotFound(!searchRes.length);
+    setTimeout(() => setPreloader(false), 1000);
+  }
 
   const handleSearchSaveMovies = (name) => {
     mainApi
@@ -211,6 +225,10 @@ function App() {
         setSaveMovies([data, ...saveMovies]);
       })
       .catch((err) => {
+        if (err === "Ошибка: 400") {
+          alert("Произошла ошибка. Невозможно сохранить фильм.");
+          localStorage.saveError = true;
+        }
         console.log(err);
       });
   };
@@ -218,13 +236,9 @@ function App() {
   const handleDeleteMovie = (movie) => {
     let savedMovie;
     if (movie.movieId) {
-     savedMovie = saveMovies.find(
-        (item) => item.movieId === movie.movieId
-      );
+      savedMovie = saveMovies.find((item) => item.movieId === movie.movieId);
     } else {
-      savedMovie = saveMovies.find(
-        (item) => item.movieId === movie.id
-      );
+      savedMovie = saveMovies.find((item) => item.movieId === movie.id);
     }
 
     mainApi

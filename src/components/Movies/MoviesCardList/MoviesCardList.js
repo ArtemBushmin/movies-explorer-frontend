@@ -53,6 +53,10 @@ function MoviesCardList({
   };
 
   useEffect(() => {
+    const resizeWindow = () => {
+      setWindowWidth(document.documentElement.clientWidth);
+    };
+
     if (windowWidth <= 480) {
       setOpenMovies(5);
       setStepMovies(2);
@@ -63,7 +67,12 @@ function MoviesCardList({
       setOpenMovies(12);
       setStepMovies(3);
     }
-  }, []);
+
+    window.addEventListener('resize', resizeWindow);
+    return () => {
+      window.removeEventListener('resize', resizeWindow);
+    };
+  }, [windowWidth]);
 
   return (
     <section className="movies-list">
